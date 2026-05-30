@@ -26,8 +26,8 @@
   --radius-sm: 8px;
   --radius-lg: 24px;
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Syne', 'Trebuchet MS', 'Arial Black', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --navbar-h: 76px;
 }
 
@@ -368,7 +368,24 @@ section { padding: 100px 0; }
   gap: 32px;
 }
 
-.nav-logo img { height: 44px; width: auto; object-fit: contain; }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.nav-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: brightness(1.05) contrast(1.1);
+}
+[data-theme="light"] .nav-logo img {
+  mix-blend-mode: multiply;
+  filter: none;
+}
 
 .nav-links {
   display: flex;
@@ -1680,7 +1697,18 @@ a.contact-val:hover { color: var(--primary-light); }
   margin-bottom: 64px;
 }
 
-.footer-brand img { margin-bottom: 16px; }
+.footer-brand img {
+  margin-bottom: 16px;
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: brightness(1.05) contrast(1.1);
+}
+[data-theme="light"] .footer-brand img {
+  mix-blend-mode: multiply;
+  filter: none;
+}
 .footer-tagline {
   font-family: var(--font-display);
   font-weight: 700;
